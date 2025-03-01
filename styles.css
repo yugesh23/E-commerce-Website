@@ -1,0 +1,220 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+    color: white;
+  }
+  
+  header {
+    background: linear-gradient(135deg, #ff6f61, #6b5b95);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.5);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    animation: glow 2s infinite alternate;
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 5px #ff6f61, 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+    }
+    100% {
+      text-shadow: 0 0 10px #6b5b95, 0 0 20px #6b5b95, 0 0 30px #6b5b95;
+    }
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #88b04b;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .categories, .filters {
+    margin-bottom: 20px;
+  }
+  
+  .category-list button {
+    background: linear-gradient(135deg, #88b04b, #6b5b95);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .category-list button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(136, 176, 75, 0.7);
+  }
+  
+  .filter-options {
+    margin-top: 10px;
+  }
+  
+  #price-range {
+    width: 200px;
+    accent-color: #88b04b;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .product-card {
+    background: linear-gradient(135deg, #2c3e50, #1a1a1a);
+    border: 1px solid #444;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(255, 111, 97, 0.5);
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .product-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #ff6f61;
+  }
+  
+  .product-card p {
+    color: #88b04b;
+    font-weight: bold;
+  }
+  
+  /* Cart Styles */
+  .cart {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: linear-gradient(135deg, #2c3e50, #1a1a1a);
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  .cart.active {
+    right: 0;
+  }
+  
+  .cart h2 {
+    margin-top: 0;
+  }
+  
+  .cart-items {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+  }
+  
+  .cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+  
+  .cart-item-info {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
+  .cart-item-info h4 {
+    margin: 0;
+    font-size: 1em;
+  }
+  
+  .cart-item-info p {
+    margin: 0;
+    color: #88b04b;
+  }
+  
+  .cart-item button {
+    background: #ff6f61;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cart-total {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  #checkout {
+    background: #03cbcf;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .product-card {
+    animation: fadeIn 0.5s ease-out;
+  }
